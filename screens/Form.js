@@ -7,6 +7,7 @@ import {addNewLineinMonthBudget} from '../actions/monthActions';
 import BackBtn from '../components/BackBtn';
 import Switch from '../components/Switch';
 import FormInput from '../components/FormInput';
+import Header from '../components/Header';
 
 class Form extends PureComponent {
     state = {
@@ -51,32 +52,36 @@ class Form extends PureComponent {
     }
     render () {
         return (
-            <View style={styles.container}>
-                <BackBtn style={{marginLeft: 10}} back={this.back}/>
-
-                <FormInput
-                    placeholder='Some product name'
-                    onChangeText={(text) => this.setState({text})}
-                    value={this.state.text}
-                />
-                <FormInput
-                    placeholder={this.state.warning || 'Only numbers'}
-                    onChangeText={this.isNumber}
-                    value={this.state.$}
-                />
-
-                <View style={styles.buttonsRow}>
-                    <Switch change={this.change} or={this.state.or}/>
-                    <Icon
-                        size={30}
-                        containerStyle={styles.iconSwitch}
-                        name='check'
-                        type='font-awesome'
-                        color='#fff'
-                        onPress={this.onButtonPress} 
+            <View>
+                <Header title='Add Input'/>
+                <View style={styles.container}>
+                    <FormInput
+                        placeholder='Some product name'
+                        onChangeText={(text) => this.setState({text})}
+                        value={this.state.text}
                     />
+                    <FormInput
+                        placeholder={this.state.warning || 'Only numbers'}
+                        onChangeText={this.isNumber}
+                        value={this.state.$}
+                    />
+
+                    <View style={styles.buttonsRow}>
+                        <BackBtn style={{marginLeft: 10}} back={this.back}/>
+                        <View  style={styles.buttonsRow}>
+                            <Switch change={this.change} or={this.state.or}/>
+                            <Icon
+                                size={30}
+                                containerStyle={styles.iconSwitch}
+                                name='check'
+                                type='font-awesome'
+                                color='#fff'
+                                onPress={this.onButtonPress} 
+                            />
+                        </View>
+                    </View>
+                
                 </View>
-            
             </View>
         )
     }
