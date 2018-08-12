@@ -5,7 +5,7 @@ import {Icon} from 'react-native-elements';
 import {removeMonthBudgetItem} from '../actions/monthActions';
 import Header from '../components/Header';
 import BackBtn from '../components/BackBtn';
-import Budjet from '../components/Budjet';
+import Budget from '../components/Budget';
 
 
 class Month extends PureComponent {
@@ -32,7 +32,7 @@ class Month extends PureComponent {
         if(!month){
             return <Text>There is no month u are loooking for!GTFO</Text>
         }
-        return <Budjet removeItem={this.removeItem} month={month} />;
+        return <Budget removeItem={this.removeItem} month={month} />;
     }
     render () {
         return (
