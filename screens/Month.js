@@ -28,7 +28,7 @@ class Month extends PureComponent {
         if(!this.props.navigation.state.params){
              return <Text>There is no month u are loooking for!GTFO</Text>
         }
-        const month = this.props.monthes.find(item => item.id === this.props.navigation.state.params.item.id);
+        const month = this.props.months.find(item => item.id === this.props.navigation.state.params.item.id);
         if(!month){
             return <Text>There is no month u are loooking for!GTFO</Text>
         }
@@ -73,8 +73,8 @@ const styles = {
     }
 };
 
-const mapStateToProps = ({monthes}) => ({
-    monthes
+const mapStateToProps = ({months}) => ({
+    months
 });
 
 export default connect(mapStateToProps, {removeMonthBudgetItem})(Month);

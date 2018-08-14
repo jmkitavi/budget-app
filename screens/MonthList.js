@@ -27,10 +27,10 @@ class MonthList extends PureComponent {
     }
     
     renderList = () => {
-        if (!this.props.monthes.length){
+        if (!this.props.months.length){
             return <Text style={{color: '#999', fontSize: 22, textAlign: 'center', marginTop: 150, opacity: 0.7}}>Add month and your costs</Text>;
         }
-       return this.props.monthes.map(item => {
+       return this.props.months.map(item => {
            let countsItem = counts(item.budget);
            return (
                <ListItemRound
@@ -60,8 +60,8 @@ class MonthList extends PureComponent {
 
 
 
-const mapStateToProps = ({monthes}) => ({
-    monthes
+const mapStateToProps = ({months}) => ({
+    months
 });
 
 

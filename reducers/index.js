@@ -1,6 +1,6 @@
 // import {combineReducers} from 'redux';
-import monthes from './monthesReducer';
+import months from './monthsReducer';
 
 export default ({
-    monthes
+    months
 });
